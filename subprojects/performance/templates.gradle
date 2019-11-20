@@ -371,6 +371,11 @@ tasks.register("santaTrackerAndroidJavaBuild", RemoteProject) {
     }
 }
 
+tasks.register("localRepoAndroidBuild", RemoteProject) {
+    remoteUri = 'https://github.com/gradle/perf-android-local-repo.git'
+    ref = "master"
+}
+
 private void addGoogleServicesJson(File outputDirectory) {
     new File(outputDirectory, 'santa-tracker/google-services.json').text = """
 {
